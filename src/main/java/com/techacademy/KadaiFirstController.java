@@ -15,8 +15,8 @@ public class KadaiFirstController {
     @GetMapping("dayofweek/{val}")
     public String dispDayOfWeek(@PathVariable String val) {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd");
-        LocalDate time = LocalDate.parse(val, formatter);
-        String week = time.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+        LocalDate date = LocalDate.parse(val, formatter);
+        String week = date.getDayOfWeek().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
         return week;
     }
 
